@@ -1,0 +1,4 @@
+insert into Valstybe values(1, 'UK');
+insert into Valstybe values(2, 'SW');
+insert into Valstybe values(3, 'USA');
+insert into Valstybe values(4, 'JP');

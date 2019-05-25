@@ -1,0 +1,13 @@
+insert into Zanras values(1, 'Mystery');
+insert into Zanras values(2, 'Action');
+insert into Zanras values(3, 'Horror');
+insert into Zanras values(4, 'Drama');
+insert into Zanras values(5, 'Adventure');
+insert into Zanras values(6, 'War');
+insert into Zanras values(7, 'Thriller');
+insert into Zanras values(8, 'Crime');
+insert into Zanras values(9, 'Comedy');
+insert into Zanras values(10, ' Romance');
+insert into Zanras values(11, ' Biography');
+insert into Zanras values(12, ' Animation');
+insert into Zanras values(13, ' Music');

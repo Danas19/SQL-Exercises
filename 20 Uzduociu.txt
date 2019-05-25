@@ -1,0 +1,224 @@
+1. select z.Vardas, z.Pavarde, p.Personazas
+from filmas f
+inner join personazas p
+on f.FilmoId = p.FilmoId
+inner join aktorius a
+on p.AktoriausId = a.AktoriausId
+left join zmogus z
+on a.ZmogausId = z.ZMogausId
+where f.Pavadinimas = "Vertigo";
+2. select f.Pavadinimas
+from filmas f
+inner join filmasrezisierius fr
+on f.FilmoId = fr.FilmoId
+where fr.RezisieriausId in
+(select fr.RezisieriausId
+from filmas f
+inner join filmasrezisierius fr
+on f.FilmoId = fr.FilmoId
+where f.Pavadinimas = "Eyes Wide Shut");
+3. select FilmoId, Pavadinimas, PastatymoMetai, Trukme as "Trukme(min)",
+Premjera from filmas
+where SukurimoValstybesId
+in(select ValstybesId from Valstybe
+where Pavadinimas <> "UK");
+4. select Pavadinimas, PastatymoMetai, Premjera, Rezisieriai,
+group_concat(Aktorius separator ", ") as Aktoriai
+from
+
+(select f.Pavadinimas, f.PastatymoMetai, f.Premjera,
+group_concat(z2.Vardas, " ", z2.Pavarde separator ", ") as Rezisieriai,
+concat_ws(" ", z.Vardas, z.Pavarde) as Aktorius
+from filmas f
+
+inner join filmoivertinimas fi on f.FilmoId = fi.FilmoId and fi.KritikoId is null
+
+left join personazas p on f.FilmoId = p.FilmoId
+left join aktorius a on p.AktoriausId = a.AktoriausId
+left join zmogus z on a.ZmogausId = z.ZmogausId                   /* z = aktoriai zmones*/
+
+left join filmasrezisierius fr on f.FilmoId = fr.FilmoId
+left join rezisierius r on fr.RezisieriausId = r.RezisieriausId
+left join zmogus z2 on r.ZmogausId = z2.ZmogausId                 /* z2 = rezisieriai zmones*/
+
+group by z.Vardas, z.Pavarde) as aaa
+
+group by Pavadinimas;
+5. select f.Pavadinimas
+from zmogus z
+inner join rezisierius r
+on z.ZmogausId = r.ZmogausId and z.Vardas = "Woody" and z.Pavarde = "Allen"
+inner join filmasrezisierius fr
+on r.RezisieriausId = fr.RezisieriausId
+inner join filmas f
+on fr.FilmoId = f.FilmoId;
+
+6. select f.Pavadinimas, fi.Ivertinimas
+from Filmas f
+left join FilmoIvertinimas fi on f.FilmoId = fi.FilmoId
+where f.FilmoId in
+(select FilmoId from filmaszanras
+where ZanroId =
+(select ZanroId
+from Zanras
+where pavadinimas = "Mystery"))
+group by fi.Ivertinimas desc
+limit 1;
+7. select Vardas, Pavarde from
+(select z.Vardas, z.Pavarde, count(f.Ivertinimas) IvertinimuKiekis
+from filmoivertinimas f
+inner join Kritikas k on f.KritikoId = k.KritikoId
+inner join zmogus z on k.ZmogausId = z.ZmogausId
+group by f.KritikoId
+having IvertinimuKiekis >= 2) as aaa
+group by Pavarde;
+8. select right(Premjera, 4) as metai
+from filmas
+where FilmoId in
+(select FilmoId
+from filmoivertinimas
+where Ivertinimas >= 5)
+group by metai;
+9. select group_concat(concat_ws(": ", f.Pavadinimas, fi.Ivertinimas)
+order by fi.Ivertinimas, f.Pavadinimas separator "; ") Filmai,
+z.Vardas, z.Pavarde
+from filmas f
+right join filmoivertinimas as fi on f.FilmoId = fi.filmoId
+left join kritikas k on fi.KritikoId = k.KritikoId
+left join zmogus z on k.ZmogausId = z.ZmogausId
+where fi.KritikoId is not null
+group by z.Pavarde, z.Vardas
+10. select f.Pavadinimas from filmas f
+inner join filmasrezisierius fr on f.FilmoId = fr.FilmoId
+inner join rezisierius r on fr.RezisieriausId = r.RezisieriausId
+inner join zmogus z on r.ZmogausId = z.ZmogausId
+where z.ZmogausId in
+(select z.ZmogausId from zmogus z
+right join aktorius a on z.ZmogausId = a.ZmogausId);
+select f.Pavadinimas from filmas f
+
+inner join filmasrezisierius fr
+on f.FilmoId = fr.FilmoId
+inner join rezisierius r
+on fr.RezisieriausId = r.RezisieriausId
+inner join zmogus z
+on r.ZmogausId = z.ZmogausId
+
+inner join personazas p 
+on f.FilmoId = p.FilmoId
+inner join aktorius a
+on p.AktoriausId = a.AktoriausId
+inner join zmogus z2
+on a.ZmogausId = z2.ZmogausId and z.ZmogausId = z2.ZmogausId
+11. select z.Vardas, z.Pavarde, fi.Ivertinimas
+from filmas f
+inner join filmoivertinimas fi on f.FilmoId = fi.FilmoId
+inner join kritikas k on fi.KritikoId = k.KritikoId
+inner join zmogus z on k.ZmogausId = z.ZmogausId
+where f.Pavadinimas = "American Beauty"
+12. select PastatymoMetai, count(FilmoId) "Kiek Filmu"
+from Filmas
+where FilmoId in
+(select FilmoId
+from filmaszanras
+where ZanroId in
+(select zanroId
+from zanras
+where Pavadinimas = "Mystery"))
+group by PastatymoMetai;
+13. select * from
+
+(select f.Pavadinimas, z.Vardas, z.Pavarde, f.Premjera, avg(fi.Ivertinimas) Ivertinimas
+from filmoivertinimas fi
+left join filmas f on fi.FilmoId = f.FilmoId
+left join filmasrezisierius fr on f.FilmoId = fr.FilmoId
+left join rezisierius r on fr.RezisieriausId = r.RezisieriausId
+left join zmogus z on r.ZmogausId = z.ZmogausId
+group by fi.FilmoId) aaa
+
+order by Ivertinimas desc
+limit 1
+14. select Pavadinimas from
+
+(select f.Pavadinimas, avg(fi.Ivertinimas) Vidurkis
+from filmas f
+left join filmoivertinimas fi on f.FilmoId = fi.FilmoId
+group by f.FilmoId
+order by Vidurkis, f.Pavadinimas) aaa
+15. select Pavadinimas
+from filmas
+where FilmoId in
+
+(select p.FilmoId from personazas p
+inner join personazas p2 on p.AktoriausId = p2.AktoriausId and p.FilmoId <> p2.FilmoId);
+16. select distinct f.Pavadinimas, f.PastatymoMetai Metai, f.Trukme "Trukme (min)"
+from filmas f
+inner join filmasrezisierius fr on f.FilmoId = fr.FilmoId
+where fr.RezisieriausId in
+
+(select fr.RezisieriausId from filmas f
+inner join personazas p on f.FilmoId = p.FilmoId and p.Personazas = "Sean Maguire"
+inner join filmasrezisierius fr on f.FilmoId = fr.FilmoId);
+17. select z.Vardas, z.Pavarde from filmas f 
+inner join personazas p on f.FilmoId = p.FilmoId and (right(f.Premjera, 4) >= 2000 or f.PastatymoMetai >= 2000)
+inner join aktorius a on p.AktoriausId = a.AktoriausId
+inner join zmogus z on a.ZmogausId = z.ZmogausId
+where p.AktoriausId in
+(select p.AktoriausId from filmas f
+inner join personazas p on f.FilmoId = p.FilmoId and right(f.Premjera, 4) <= 1990);
+18. select Vardas, Pavarde,
+group_concat(concat_ws(": ", Pavadinimas, Kiek_Filmu) separator "; ") Filmai from
+(select z.Vardas, z.Pavarde, za.Pavadinimas, count(f.FilmoId) Kiek_Filmu from zmogus z 
+inner join rezisierius r on z.ZmogausId = r.ZmogausId
+inner join filmasrezisierius fr on r.RezisieriausId = fr.RezisieriausId
+inner join filmas f on fr.FilmoId = f.FilmoId
+inner join filmaszanras fz on f.FilmoId = fz.FilmoId
+inner join zanras za on fz.ZanroId = za.ZanroId
+group by r.RezisieriausId, za.ZanroId) aaa
+group by Vardas, Pavarde
+19. select z.Pavadinimas as Zanras, avg(f.Trukme) "Trunka (min)"
+from filmaszanras as fz
+left join zanras as z on fz.ZanroId = z.ZanroId
+left join filmas as f on fz.FilmoId = f.FilmoId
+group by fz.ZanroId
+20. select PastatymoMetai as Metai, avg(Vidurkis) as Vidurkis from
+
+(select f.FilmoId, f.PastatymoMetai, avg(fi.Ivertinimas) as Vidurkis from filmas f
+left join filmoivertinimas fi on f.FilmoId = fi.FilmoId
+group by f.FilmoId
+having vidurkis is not null) aaa /*aaa lenteleje filmai ir ju ivertinimu vidurkiai */
+
+group by Metai
+order by Vidurkis;
+21. select f.Pavadinimas, if (k.KritikoId is null and fi.Ivertinimas is not null, "(Anonimas)",
+concat_ws(" ", z.Vardas, z.Pavarde)) Kritikas, fi.Ivertinimas
+from filmas f
+left join filmoivertinimas fi on f.FilmoId = fi.FilmoId
+left join kritikas k on fi.KritikoId = k.KritikoId
+left join zmogus z on k.ZmogausId = z.ZmogausId
+right join
+
+(select f.Pavadinimas, z.Vardas, z.Pavarde, max(fi.Ivertinimas) MaxIvertinimas
+from filmas f
+left join filmoivertinimas fi on f.FilmoId = fi.FilmoId
+left join kritikas k on fi.KritikoId = k.KritikoId
+left join zmogus z on k.ZmogausId = z.ZmogausId
+group by f.Pavadinimas) aaa
+
+on f.Pavadinimas = aaa.Pavadinimas
+and (fi.Ivertinimas = aaa.MaxIvertinimas or aaa.MaxIvertinimas is null)
+
+CREATE PROCEDURE closestCells()
+CREATE or replace view positions2
+as
+select a.id as id1, b.id as id2, sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)) as sqrt1
+from positions as a
+inner join positions as b
+on a.id <> b.id;
+
+select a.id as id3, b.id as id4, c.id1 as id1, c.sqrt1 as sqrt1
+from positions as a
+inner join positions as b
+on a.id = c.id1
+inner join positions2 as c
+on sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)) = c.sqrt;

@@ -1,0 +1,319 @@
+insert into Zmogus values(1, 'Righty', 'Sock');
+insert into Zmogus values(2, 'Richard', 'Adams');
+insert into Zmogus values(3, 'Jack', 'Malvern');
+insert into Zmogus values(4, 'Brandt', 'Sponseller');
+insert into Zmogus values(5, 'Flagrant', 'Baronessa');
+insert into Zmogus values(6, 'Vincent', 'Cadena');
+insert into Zmogus values(7, 'Simon', 'Wright');
+insert into Zmogus values(8, 'Hannah', 'Steele');
+insert into Zmogus values(9, 'Neal', 'Wruck');
+insert into Zmogus values(10, 'Paul', 'Monks');
+insert into Zmogus values(11, 'Mike', 'Salvati');
+insert into Zmogus values(12, 'Scott', 'LeBrun');
+insert into Zmogus values(13, 'Krug', 'Stillo');
+insert into Zmogus values(14, 'Sasha', 'Goldshtein');
+insert into Zmogus values(15, 'Josh', 'Cates');
+insert into Zmogus values(16, 'Wesley S.', 'Walker');
+insert into Zmogus values(18, 'Victor', 'Woeltjen');
+insert into Zmogus values(19, 'Alec', 'Shaw');
+insert into Zmogus values(20, 'Alfred', 'Hitchcock');
+insert into Zmogus values(21, 'Jack', 'Clayton');
+insert into Zmogus values(22, 'David', 'Lean');
+insert into Zmogus values(23, 'Michael', 'Cimino');
+insert into Zmogus values(24, 'Milos', 'Forman');
+insert into Zmogus values(25, 'Ridley', 'Scott');
+insert into Zmogus values(26, 'Stanley', 'Kubrick');
+insert into Zmogus values(27, 'Bryan', 'Singer');
+insert into Zmogus values(28, 'Roman', 'Polanski');
+insert into Zmogus values(29, 'Paul Thomas', 'Anderson');
+insert into Zmogus values(30, 'Woody', 'Allen');
+insert into Zmogus values(31, 'Hayao', 'Miyazaki');
+insert into Zmogus values(32, 'Frank', 'Darabont');
+insert into Zmogus values(33, 'Sam', 'Mendes');
+insert into Zmogus values(34, 'James', 'Cameron');
+insert into Zmogus values(35, 'Gus Van', 'Sant');
+insert into Zmogus values(36, 'John', 'Boorman');
+insert into Zmogus values(37, 'Danny', 'Boyle');
+insert into Zmogus values(38, 'Christopher', 'Nolan');
+insert into Zmogus values(39, 'Richard', 'Kelly');
+insert into Zmogus values(40, 'Kevin', 'Spacey');
+insert into Zmogus values(41, 'Andrei', 'Tarkovsky');
+insert into Zmogus values(42, 'James', 'Stewart');
+insert into Zmogus values(43, 'Maggie', 'Gyllenhaal');
+insert into Zmogus values(44, 'Deborah', 'Kerr');
+insert into Zmogus values(45, 'Peter', 'OToole');
+insert into Zmogus values(46, 'Robert De', 'Niro');
+insert into Zmogus values(47, 'F. Murray', 'Abraham');
+insert into Zmogus values(48, 'Harrison', 'Ford');
+insert into Zmogus values(49, 'Nicole', 'Kidman');
+insert into Zmogus values(50, 'Stephen', 'Baldwin');
+insert into Zmogus values(51, 'Mark', 'Wahlberg');
+insert into Zmogus values(52, 'Claire', 'Danes');
+insert into Zmogus values(53, 'Tim', 'Robbins');
+insert into Zmogus values(54, 'Robin', 'Williams');
+insert into Zmogus values(55, 'Kate', 'Winslet');
+insert into Zmogus values(56, 'Jon', 'Voight');
+insert into Zmogus values(57, 'Ewan', 'McGregor');
+insert into Zmogus values(58, 'Dev', 'Patel');
+insert into Zmogus values(59, 'Sigourney', 'Weaver');
+insert into Zmogus values(60, 'Jack', 'Nicholson');
+insert into Zmogus values(61, 'Christian', 'Bale');
+
+
+insert into Zanras values(1, 'Mystery');
+insert into Zanras values(2, 'Action');
+insert into Zanras values(3, 'Horror');
+insert into Zanras values(4, 'Drama');
+insert into Zanras values(5, 'Adventure');
+insert into Zanras values(6, 'War');
+insert into Zanras values(7, 'Thriller');
+insert into Zanras values(8, 'Crime');
+insert into Zanras values(9, 'Comedy');
+insert into Zanras values(10, ' Romance');
+insert into Zanras values(11, ' Biography');
+insert into Zanras values(12, ' Animation');
+insert into Zanras values(13, ' Crime');
+insert into Zanras values(14, ' Music');
+
+
+
+insert into Valstybe values(1, 'UK');
+insert into Valstybe values(2, 'SW');
+insert into Valstybe values(3, 'USA');
+insert into Valstybe values(4, 'JP');
+
+
+
+insert into kritikas values(1, 1);
+insert into kritikas values(2, 2);
+insert into kritikas values(3, 3);
+insert into kritikas values(4, 4);
+insert into kritikas values(5, 5);
+insert into kritikas values(6, 6);
+insert into kritikas values(7, 7);
+insert into kritikas values(8, 8);
+insert into kritikas values(9, 9);
+insert into kritikas values(10, 10);
+insert into kritikas values(11, 11);
+insert into kritikas values(12, 12);
+insert into kritikas values(13, 13);
+insert into kritikas values(14, 14);
+insert into kritikas values(15, 15);
+insert into kritikas values(16, 16);
+insert into kritikas values(17, 18);
+insert into kritikas values(18, 19);
+
+
+
+insert into kalba values(1, "English");
+	insert into kalba values(2, "Japanese");
+
+
+
+insert into Filmas values(1, 'Vertigo', 1958, 128, 1, '8/24/1958', 1);
+insert into Filmas values(2, 'The Innocents', 1961, 100, 1, '2/19/1962', 2);
+insert into Filmas values(3, 'Lawrence of Arabia', 1962, 216, 1, '12/11/1962', 1);
+insert into Filmas values(4, 'The Deer Hunter', 1978, 183, 1, '3/8/1979', 1);
+insert into Filmas values(5, 'Amadeus', 1984, 160, 1, '1/7/1985', 1);
+insert into Filmas values(6, 'Blade Runner', 1982, 117, 1, '9/9/1982', 1);
+insert into Filmas values(7, 'Eyes Wide Shut', 1999, 159, 1, '', 1);
+insert into Filmas values(8, 'The Usual Suspects', 1995, 106, 1, '8/25/1995', 1);
+insert into Filmas values(9, 'Chinatown', 1974, 130, 1, '8/9/1974', 1);
+insert into Filmas values(10, 'Boogie Nights', 1997, 155, 1, '2/16/1998', 1);
+insert into Filmas values(11, 'Annie Hall', 1977, 93, 1, '4/20/1977', 3);
+insert into Filmas values(12, 'Princess Mononoke', 1997, 134, 2, '10/19/2001', 1);
+insert into Filmas values(13, 'The Shawshank Redemption', 1994, 142, 1, '2/17/1995', 1);
+insert into Filmas values(14, 'American Beauty', 1999, 122, 1, '', 1);
+insert into Filmas values(15, 'Titanic', 1997, 194, 1, '6/3/1998', 1);
+insert into Filmas values(16, 'Good Will Hunting', 1997, 126, 1, '6/3/1998', 1);
+insert into Filmas values(17, 'Deliverance', 1972, 109, 1, '10/5/1982', 1);
+insert into Filmas values(18, 'Trainspotting', 1996, 94, 1, '2/23/1996', 1);
+insert into Filmas values(19, 'The Prestige', 2006, 130, 1, '11/10/2006', 1);
+insert into Filmas values(20, 'Donnie Darko', 2001, 113, 1, '', 1);
+insert into Filmas values(21, 'Slumdog Millionaire', 2008, 120, 1, '1/9/2009', 1);
+insert into Filmas values(22, 'Aliens', 1986, 137, 1, '8/29/1986', 1);
+insert into Filmas values(23, 'Beyond the Sea', 2004, 118, 1, '11/26/2004', 1);
+insert into Filmas values(24, 'Avatar', 2009, 162, 1, '12/17/2009', 1);
+insert into Filmas values(25, 'Seven Samurai', 1954, 207, 2, '4/26/1954', 4);
+insert into Filmas values(26, 'Spirited Away', 2001, 125, 2, '9/12/2003', 1);
+insert into Filmas values(27, 'Back to the Future', 1985, 116, 1, '12/4/1985', 1);
+insert into Filmas values(28, 'Braveheart', 1995, 178, 1, '9/8/1995', 1);
+
+
+
+insert into filmoivertinimas values(6, null, 9.2);
+insert into filmoivertinimas values(12, null, 9.9);
+insert into filmoivertinimas values(1, 1, 8.4);
+insert into filmoivertinimas values(15, 1, 7.7);
+insert into filmoivertinimas values(1, 2, 7.2);
+insert into filmoivertinimas values(23, 2, 6.7);
+insert into filmoivertinimas values(2, 3, 7.9);
+insert into filmoivertinimas values(2, 4, 7.1);
+insert into filmoivertinimas values(22, 4, 8.4);
+insert into filmoivertinimas values(3, 5, 8.3);
+insert into filmoivertinimas values(27, 5, 8.5);
+insert into filmoivertinimas values(3, 6, 8.2);
+insert into filmoivertinimas values(21, 6, 8.0);
+insert into filmoivertinimas values(8, 7, 8.6);
+insert into filmoivertinimas values(27, 7, 6.0);
+insert into filmoivertinimas values(8, 8, 8.7);
+insert into filmoivertinimas values(27, 17, 6);
+insert into filmoivertinimas values(20, 8, 8.1);
+insert into filmoivertinimas values(9, 9, 0.0);
+insert into filmoivertinimas values(26, 9, 5.0);
+insert into filmoivertinimas values(10, 10, 3.0);
+insert into filmoivertinimas values(26, 10, 4.1);
+insert into filmoivertinimas values(11, 11, 8.1);
+insert into filmoivertinimas values(14, 11, 8.1);
+insert into filmoivertinimas values(19, 11, 6.1);
+insert into filmoivertinimas values(12, 12, 8.0);
+insert into filmoivertinimas values(18, 12, 4.0);
+insert into filmoivertinimas values(12, 13, 8.2);
+insert into filmoivertinimas values(25, 13, 7.7);
+insert into filmoivertinimas values(14, 14, 7.0);
+insert into filmoivertinimas values(21, 14, 7.0);
+insert into filmoivertinimas values(15, 15, 6.9);
+insert into filmoivertinimas values(16, 15, 4.0);
+insert into filmoivertinimas values(20, 16, 8.5);
+insert into filmoivertinimas values(24, 17, 7.3);
+insert into filmoivertinimas values(27, 18, 9.0);
+
+
+
+insert into filmaszanras values(1, 1);
+insert into filmaszanras values(1, 2);
+insert into filmaszanras values(2, 3);
+insert into filmaszanras values(2, 1);
+insert into filmaszanras values(2, 4);
+insert into filmaszanras values(3, 5);
+insert into filmaszanras values(4, 6);
+insert into filmaszanras values(6, 7);
+insert into filmaszanras values(7, 1);
+insert into filmaszanras values(8, 8);
+insert into filmaszanras values(11, 9);
+insert into filmaszanras values(11, 10);
+insert into filmaszanras values(11, 11);
+insert into filmaszanras values(12, 12);
+insert into filmaszanras values(12, 5);
+insert into filmaszanras values(12, 1);
+insert into filmaszanras values(13, 13);
+insert into filmaszanras values(14, 10);
+insert into filmaszanras values(15, 1);
+insert into filmaszanras values(17, 5);
+insert into filmaszanras values(18, 4);
+insert into filmaszanras values(21, 4);
+insert into filmaszanras values(22, 2);
+insert into filmaszanras values(23, 14);
+insert into filmaszanras values(23, 4);
+insert into filmaszanras values(26, 4);
+insert into filmaszanras values(27, 1);
+insert into filmaszanras values(28, 4);
+
+
+
+insert into Aktorius values(11, 30);
+insert into Aktorius values(15, 40);
+insert into Aktorius values(1, 42);
+insert into Aktorius values(2, 43);
+insert into Aktorius values(3, 44);
+insert into Aktorius values(4, 45);
+insert into Aktorius values(5, 46);
+insert into Aktorius values(6, 47);
+insert into Aktorius values(7, 48);
+insert into Aktorius values(8, 49);
+insert into Aktorius values(9, 50);
+insert into Aktorius values(10, 51);
+insert into Aktorius values(12, 52);
+insert into Aktorius values(13, 53);
+insert into Aktorius values(14, 54);
+insert into Aktorius values(16, 55);
+insert into Aktorius values(17, 56);
+insert into Aktorius values(18, 57);
+insert into Aktorius values(19, 58);
+insert into Aktorius values(20, 59);
+insert into Aktorius values(21, 60);
+insert into Aktorius values(22, 61);
+
+
+
+insert into Personazas values(1, 1, 'M', 'John Scottie Ferguson');
+insert into Personazas values(1, 2, 'N', 'Marry');
+insert into Personazas values(2,3,'F','Miss Giddens');
+insert into Personazas values(3,4,'M','T.E. Lawrence');
+insert into Personazas values(4,5,'M','Michael');
+insert into Personazas values(5,6,'M','Antonio Salieri');
+insert into Personazas values(6,7,'M','Rick Deckard');
+insert into Personazas values(7,8,'F','Alice Harford');
+insert into Personazas values(8,9,'M','McManus');
+insert into Personazas values(9,10,'M','Eddie Adams');
+insert into Personazas values(10,11,'M','Alvy Singer');
+insert into Personazas values(11,12,'F','San');
+insert into Personazas values(12,13,'M','Andy Dufresne');
+insert into Personazas values(12,14,'N','Scott');
+insert into Personazas values(12,15,'N','Sam');
+insert into Personazas values(13,15,'M','Lester Burnham');
+insert into Personazas values(14,16,'F','Rose DeWitt Bukater');
+insert into Personazas values(15,14,'M','Sean Maguire');
+insert into Personazas values(16,17,'M','Ed');
+insert into Personazas values(17,18,'M','Renton');
+insert into Personazas values(18,2,'F','Elizabeth Darko');
+insert into Personazas values(19,19,'M','Older Jamal');
+insert into Personazas values(20,20,'F','Ripley');
+insert into Personazas values(21,15,'M','Bobby Darin');
+insert into Personazas values(22,21,'M','J.J. Gittes');
+insert into Personazas values(23,22,'M','Alfred Borden');
+
+
+
+insert into rezisierius values(1,20);
+insert into rezisierius values(2,21);
+insert into rezisierius values(3,22);
+insert into rezisierius values(4,23);
+insert into rezisierius values(5,24);
+insert into rezisierius values(6,25);
+insert into rezisierius values(7,26);
+insert into rezisierius values(8,27);
+insert into rezisierius values(9,28);
+insert into rezisierius values(10,29);
+insert into rezisierius values(11,30);
+insert into rezisierius values(12,31);
+insert into rezisierius values(13,32);
+insert into rezisierius values(14,33);
+insert into rezisierius values(15,34);
+insert into rezisierius values(16,35);
+insert into rezisierius values(17,36);
+insert into rezisierius values(18,37);
+insert into rezisierius values(19,38);
+insert into rezisierius values(20,39);
+insert into rezisierius values(21,40);
+insert into rezisierius values(22,41);
+
+
+insert into filmasrezisierius values(1,1);
+insert into filmasrezisierius values(2,2);
+insert into filmasrezisierius values(3,3);
+insert into filmasrezisierius values(4,4);
+insert into filmasrezisierius values(5,5);
+insert into filmasrezisierius values(6,6);
+insert into filmasrezisierius values(7,7);
+insert into filmasrezisierius values(8,8);
+insert into filmasrezisierius values(8,2);
+insert into filmasrezisierius values(9,9);
+insert into filmasrezisierius values(10,10);
+insert into filmasrezisierius values(11,11);
+insert into filmasrezisierius values(12,12);
+insert into filmasrezisierius values(12,2);
+insert into filmasrezisierius values(13,13);
+insert into filmasrezisierius values(14,14);
+insert into filmasrezisierius values(15,15);
+insert into filmasrezisierius values(15,11);
+insert into filmasrezisierius values(16,16);
+insert into filmasrezisierius values(17,17);
+insert into filmasrezisierius values(18,18);
+insert into filmasrezisierius values(19,19);
+insert into filmasrezisierius values(20,20);
+insert into filmasrezisierius values(21,18);
+insert into filmasrezisierius values(22,15);
+insert into filmasrezisierius values(23,21);
+insert into filmasrezisierius values(23,7);
+insert into filmasrezisierius values(24,22);

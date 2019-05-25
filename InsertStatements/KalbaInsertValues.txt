@@ -1,0 +1,2 @@
+insert into kalba values(1, "English");
+	insert into kalba values(2, "Japanese");
